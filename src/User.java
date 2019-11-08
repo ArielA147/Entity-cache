@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+import com.google.gson.Gson;
 
-public class User {
+import java.util.Observable;
+import java.util.Observer;
+
+public class User implements Observer {
+
+    @Override
+    public void update(Observable o, Object arg) {
+
+    }
 }
