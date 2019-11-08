@@ -5,7 +5,9 @@ import java.util.List;
 public class RepositoryProvider implements IProvider {
 
     private List<Gson> data;
-    private String jsonInString = "{\"id\":\"1\"}";
+
+    // deserialize json to object string
+    static String jsonInString = "{\"id\":\"1\"}";
 
     public Gson getData(int id) {
         MyEntity entity;
@@ -32,7 +34,7 @@ public class RepositoryProvider implements IProvider {
                 break;
             }
         }
-    }e
+    }
     public void remove(Gson entity) throws Exception {
         int entityId = entity.fromJson(jsonInString, MyEntity.class).getId();
         for (int i = 0; i < this.data.size(); i++) {
