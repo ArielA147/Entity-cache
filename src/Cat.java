@@ -17,4 +17,10 @@ public class Cat implements IEntity {
     public void setId(int number) {
         this.id = number;
     }
+
+    @Override
+    public String stringJson() {
+        String json = "{'id':'\"+this.id+\"','name: '"+this.name+"'}";
+        return null;
+    }
 }
