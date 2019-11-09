@@ -13,12 +13,12 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     enum loadType {
         Lazy,
-        Eager}
-    ;
+        Eager
+    };
 
     public T getEntity(int id) {
         try {
-            return data.get(id);
+            return this.data.get(id);
         } catch (Exception e) {
             System.out.println("there is not entity in this id number");
             return null;
@@ -29,13 +29,14 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
         try {
             Gson gson = new Gson();
             String jsonString = gson.toJson(entity);
+
             int id = entity.getId();
 
-            provider.update(id, jsonString ); //Serialize the json as ShapeType
-            data.put(id,entity);
+            this.provider.update(id, jsonString);
+            this.data.put(id, entity);
 
         } catch (Exception e) {
-            System.out.println("could not add the new entity to the provider, hence the entity didnt get into your " +
+            Logger.log("could not add the new entity to the provider, hence the entity didnt get into your " +
                     "local cache");
         }
     }
@@ -46,8 +47,9 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
             String jsonString = gson.toJson(entity);
 
             int id = entity.getId();
-            provider.update(id,jsonString);
-            data.replace(id,entity);
+
+            this.provider.update(id, jsonString);
+            this.data.replace(id, entity);
 
         } catch (Exception e) {
             System.out.println("could not update the new entity to the provider, hence the entity didnt updated into " +
@@ -57,7 +59,6 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     public void remove(int id) {
         try {
-            getEntity(id);
             provider.remove(id);
             data.remove(id);
         } catch (Exception e) {
