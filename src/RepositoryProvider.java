@@ -33,7 +33,6 @@ public class RepositoryProvider implements IProvider {
     public void update(int id , String entity) throws Exception {
         boolean found = false;
         for (int i = 0; i < this.data.size(); i++) {
-            // finding the entity we are updating
             if (id == data.get(i).fromJson(jsonInString, IEntity.class).getId()) {
 
                 Gson g = new Gson();
