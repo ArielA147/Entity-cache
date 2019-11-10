@@ -1,5 +1,9 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
@@ -43,8 +47,10 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
     private void loadData(LOADTYPE loadType) {
         if (loadType.equals(LOADTYPE.LAZY)) {
             for (Map.Entry<Integer, String> entry : provider.getAll().entrySet()) {
-                Gson g = new Gson();
-                T entity = g.fromJson(entry.getValue().stringJson(), entry.getClass());
+                GsonBuilder gson = new GsonBuilder();
+                Type entityType = new TypeToken<T>(){}.getType();
+                T entity= gson.create().fromJson(entry.getValue(), entityType);
+                System.out.println(entity.getId());
                 this.data.put(entry.getKey(),entity);
             }
         }
@@ -130,5 +136,9 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     public void deleteObserver(Observer o) {
         super.deleteObserver(o);
+    }
+
+    public static void main(String[] args){
+        return;
     }
 }
