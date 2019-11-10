@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cf9fda1-d4e8-4eb6-a832-3f4777d87089" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EntityCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IProvider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +24,8 @@
       <file leaf-file-name="EntityCache.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EntityCache.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="306">
+              <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#loadData#0;class#EntityCache#0" />
@@ -272,12 +269,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573148544143</updated>
-      <workItem from="1573148549335" duration="45317000" />
+      <workItem from="1573148549335" duration="46558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45317000" />
+    <option name="totallyTimeSpent" value="46558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -491,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EntityCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="31" />
+        <state relative-caret-position="306">
+          <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#loadData#0;class#EntityCache#0" />

@@ -4,8 +4,6 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
@@ -45,10 +43,9 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
     private void loadData(LOADTYPE loadType) {
         if (loadType.equals(LOADTYPE.LAZY)) {
             for (Map.Entry<Integer, String> entry : provider.getAll().entrySet()) {
-
                 Gson g = new Gson();
-
-                this.data.put(entry.getKey(), g.fromJson(entity.stringJson(), entity.getClass()));
+                T entity = g.fromJson(entry.getValue().stringJson(), entry.getClass());
+                this.data.put(entry.getKey(),entity);
             }
         }
     }
@@ -58,7 +55,6 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
             return this.data.get(id);
         } catch (NullPointerException e) {
             System.out.println("could not get the entity from the provider, ");
-            //LOGGER.log(Level.WARNING, "could not get the entity from the provider, ");
             return null;
         }
     }
@@ -83,7 +79,6 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
         } catch (NullPointerException e) {
             System.out.println("could not add the new entity to the provider, hence the entity didn't get into your local cache");
-            //LOGGER.log(Level.WARNING, "could not add the new entity to the provider, hence the entity didn't get into your local cache");
         }
     }
 
@@ -106,8 +101,6 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
         } catch (NullPointerException e) {
             System.out.println("could not update the new entity to the provider, hence the entity didn't get into your entity cache");
-            //LOGGER.log(Level.WARNING, "could not update the new entity to the provider, hence the entity didn't get
-            // into your entity cache");
         }
     }
 
@@ -127,9 +120,7 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
             notifyObservers(id);
 
         } catch (NullPointerException e) {
-            System.out.println("could not remove the entity from the provider, " +
-                    "hence the entity didn't removed from your entity cache");
-            //LOGGER.log(Level.WARNING, "could not remove the entity from the provider, hence the entity didn't removed from your entity cache");
+            System.out.println("could not remove the entity from the provider, hence the entity didn't removed from your entity cache");
         }
     }
 
