@@ -15,11 +15,13 @@ public class User<T extends IEntity> implements Observer {
 
     public void add(T entity) {
         try {
-            myCache.add(entity);
+            if(this.data.containsKey(entity.getId())) throw new KeyException("the entity is already exist");
             this.data.put(entity.getId(), entity);
+
+            myCache.add(entity); // now trying to add the entity to the cache
         } catch (KeyException e) {
             System.out.println(e.getMessage());
-            System.out.println("could not add the new entity to the provider, hence the entity didn't get into your local cache");
+            System.out.println("could not add the new entity to the provider");
         }
     }
 

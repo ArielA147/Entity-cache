@@ -20,7 +20,7 @@ public class RepositoryProvider implements IProvider {
 
     public void add(Integer id, String entity) throws KeyException {
         if (this.data.containsKey(id))
-            throw new KeyException("the id key already exists");
+            throw new KeyException("the id key already exists in the provider");
         this.data.put(id, entity);
     }
 

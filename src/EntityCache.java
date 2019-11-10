@@ -124,6 +124,11 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      * @param id int number
      */
     public void remove(int id) {
+
+        if(!this.data.containsKey(id)){
+            throw new NullPointerException("the entity doesn't exists");
+        }
+
         if (this.loadType.equals(LOADTYPE.LAZY)) {
             loadData();
         }
