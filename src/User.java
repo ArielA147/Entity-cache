@@ -7,9 +7,9 @@ public class User<T extends IEntity> implements Observer {
     private ConcurrentHashMap<Integer, T> data;
     private EntityCache<T> myCache;
 
-    public User(T entity) {
-        this.data = new ConcurrentHashMap<>();
-        this.data.put(entity.getId(), entity);
+    public User(IProvider provider, EntityCache<T> entityCache) {
+        this.data = new ConcurrentHashMap<Integer, T>();
+        this.myCache = entityCache;
     }
 
     public void add(T entity) {

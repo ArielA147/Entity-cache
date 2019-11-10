@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cf9fda1-d4e8-4eb6-a832-3f4777d87089" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/LocalCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalProject/EntityCache$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/finalProject/EntityCache$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalProject/EntityCache$loadType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/finalProject/EntityCache$loadType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalProject/EntityCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/finalProject/EntityCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalProject/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/finalProject/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EntityCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EntityCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,44 +29,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EntityCache.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EntityCache.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EntityCache.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="378">
+              <caret line="150" column="5" lean-forward="true" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#LOADTYPE#0;class#EntityCache#0" />
+                <element signature="method#EntityCache#1;class#EntityCache#0" />
                 <element signature="docComment;method#loadData#0;class#EntityCache#0" />
-                <element signature="e#3012#3013#0" expanded="true" />
-                <element signature="e#3048#3049#0" expanded="true" />
-                <element signature="e#3094#3095#0" expanded="true" />
-                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="method#getEntity#0;class#EntityCache#0" />
+                <element signature="docComment;method#add#0;class#EntityCache#0" />
+                <element signature="docComment;method#update#0;class#EntityCache#0" />
+                <element signature="method#update#0;class#EntityCache#0" />
+                <element signature="docComment;method#remove#0;class#EntityCache#0" />
+                <element signature="method#remove#0;class#EntityCache#0" />
+                <element signature="e#4039#4040#0" expanded="true" />
+                <element signature="e#4075#4076#0" expanded="true" />
+                <element signature="e#4121#4122#0" expanded="true" />
+                <element signature="e#4160#4161#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryProvider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RepositoryProvider.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#add#0;class#RepositoryProvider#0" />
-                <element signature="method#update#0;class#RepositoryProvider#0" />
-                <element signature="method#remove#0;class#RepositoryProvider#0" />
-              </folding>
+              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="429">
+              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#update#0;class#User#0" />
+                <element signature="method#remove#0;class#User#0" />
               </folding>
             </state>
           </provider>
@@ -86,6 +98,7 @@
       <find>replace(</find>
       <find>REMOVE(</find>
       <find>depend</find>
+      <find>LOGGER</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,12 +112,14 @@
         <option value="$PROJECT_DIR$/src/CacheIEntity.java" />
         <option value="$PROJECT_DIR$/src/CacheEntity.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
-        <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/src/RepositoryProvider.java" />
         <option value="$PROJECT_DIR$/src/Cat.java" />
         <option value="$PROJECT_DIR$/src/IProvider.java" />
         <option value="$PROJECT_DIR$/src/IEntity.java" />
+        <option value="$PROJECT_DIR$/src/LocalCache.java" />
         <option value="$PROJECT_DIR$/src/EntityCache.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/User.java" />
       </list>
     </option>
   </component>
@@ -143,27 +158,7 @@
             <path>
               <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalProject" type="462c0819:PsiDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="4.4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -198,9 +193,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EntityCache">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="EntityCache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EntityCache" />
+      <module name="finalProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="finalProject" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -282,9 +282,11 @@
     <list>
       <item itemvalue="Gradle.C:/Users/User/IdeaProjects/Softimize/finalProject [implementation 'com.google.code.gson:gson:2.8.6']" />
       <item itemvalue="Application.EntityCache" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.EntityCache" />
         <item itemvalue="Gradle.C:/Users/User/IdeaProjects/Softimize/finalProject [implementation 'com.google.code.gson:gson:2.8.6']" />
       </list>
@@ -300,15 +302,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573148544143</updated>
-      <workItem from="1573148549335" duration="47814000" />
+      <workItem from="1573148549335" duration="53172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47814000" />
+    <option name="totallyTimeSpent" value="53172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -322,7 +325,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.54336286" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
@@ -331,7 +334,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.28495574" />
       <window_info anchor="bottom" id="CheckStyle" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.33274338" />
+      <window_info anchor="bottom" id="Terminal" weight="0.33274338" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22267206" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32920355" />
       <window_info anchor="right" id="Theme Preview" />
@@ -383,7 +386,39 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/EntityCache.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/EntityCache.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>13</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/User.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -426,13 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0-sources.jar!/com/google/gson/Gson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="582" column="30" selection-start-line="582" selection-start-column="30" selection-end-line="582" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -479,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-86">
@@ -493,39 +514,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/gson-2.8.0-sources.jar!/com/google/gson/Gson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+          <folding>
+            <element signature="e#8636#8662#0" expanded="true" />
+            <element signature="e#8916#8936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RepositoryProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="323">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#add#0;class#RepositoryProvider#0" />
             <element signature="method#update#0;class#RepositoryProvider#0" />
             <element signature="method#remove#0;class#RepositoryProvider#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
+    <entry file="file://$PROJECT_DIR$/src/Cat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <element signature="e#87#88#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EntityCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="378">
+          <caret line="150" column="5" lean-forward="true" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#LOADTYPE#0;class#EntityCache#0" />
+            <element signature="method#EntityCache#1;class#EntityCache#0" />
             <element signature="docComment;method#loadData#0;class#EntityCache#0" />
-            <element signature="e#3012#3013#0" expanded="true" />
-            <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#3094#3095#0" expanded="true" />
-            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="method#getEntity#0;class#EntityCache#0" />
+            <element signature="docComment;method#add#0;class#EntityCache#0" />
+            <element signature="docComment;method#update#0;class#EntityCache#0" />
+            <element signature="method#update#0;class#EntityCache#0" />
+            <element signature="docComment;method#remove#0;class#EntityCache#0" />
+            <element signature="method#remove#0;class#EntityCache#0" />
+            <element signature="e#4039#4040#0" expanded="true" />
+            <element signature="e#4075#4076#0" expanded="true" />
+            <element signature="e#4121#4122#0" expanded="true" />
+            <element signature="e#4160#4161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#update#0;class#User#0" />
+            <element signature="method#remove#0;class#User#0" />
           </folding>
         </state>
       </provider>
@@ -543,7 +614,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34252873" />
               </list>
             </option>
           </splitter-proportions>
@@ -555,7 +626,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34252873" />
               </list>
             </option>
           </splitter-proportions>
@@ -590,7 +661,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34252873" />
               </list>
             </option>
           </splitter-proportions>

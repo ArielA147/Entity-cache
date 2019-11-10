@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Logger;
 
 /**
  * the class will optimize access to entities.
@@ -17,7 +16,6 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     private IProvider provider;
     private ConcurrentHashMap<Integer, T> data;
-    private static final Logger LOGGER = Logger.getLogger(EntityCache.class.getName());
 
     static enum LOADTYPE {
         LAZY,
@@ -28,36 +26,45 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     private LOADTYPE loadType;
 
+    public EntityCache(IProvider provider) {
+        this.loadType = LOADTYPE.EAGER;
+        loadData();
+        this.provider = provider;
+    }
 
     public EntityCache(IProvider provider, LOADTYPE loadType) {
         this.provider = provider;
         this.data = new ConcurrentHashMap<Integer, T>();
         this.loadType = loadType;
         if (this.loadType == LOADTYPE.EAGER) {
-            Map<Integer, String> tmp = provider.getAll();
+            loadData();
         }
 
     }
 
     /**
      * loading the data from the provider to the local map if loadType is lazy
-     *
-     * @param loadType enum
      */
-    private void loadData(LOADTYPE loadType) {
-        if (loadType.equals(LOADTYPE.LAZY)) {
+    private void loadData() {
+        try {
             for (Map.Entry<Integer, String> entry : provider.getAll().entrySet()) {
                 GsonBuilder gson = new GsonBuilder();
-                Type entityType = new TypeToken<T>(){}.getType();
-                T entity= gson.create().fromJson(entry.getValue(), entityType);
+                Type entityType = new TypeToken<T>() {
+                }.getType();
+                T entity = gson.create().fromJson(entry.getValue(), entityType);
                 System.out.println(entity.getId());
-                this.data.put(entry.getKey(),entity);
+                this.data.put(entry.getKey(), entity);
             }
+        } catch (NullPointerException e) {
+            this.data = new ConcurrentHashMap<>();
         }
     }
 
     public T getEntity(int id) {
         try {
+            if (this.loadType.equals(LOADTYPE.LAZY)) {
+                loadData();
+            }
             return this.data.get(id);
         } catch (NullPointerException e) {
             System.out.println("could not get the entity from the provider, ");
@@ -71,14 +78,16 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      * @param entity new data that represents an entity
      */
     public void add(T entity) {
-        this.loadData(this.loadType);
         try {
+            if (this.loadType.equals(LOADTYPE.LAZY)) {
+                loadData();
+            }
             Gson gson = new Gson();
             String jsonString = gson.toJson(entity);
 
             int id = entity.getId();
 
-            this.provider.update(id, jsonString);
+            this.provider.add(id, jsonString);
             this.data.put(id, entity);
 
             notifyObservers(entity);
@@ -94,8 +103,11 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      * @param entity new data that represents an entity
      */
     public void update(T entity) {
-        this.loadData(this.loadType);
+        loadData();
         try {
+            if (this.loadType.equals(LOADTYPE.LAZY)) {
+                loadData();
+            }
             Gson gson = new Gson();
             String jsonString = gson.toJson(entity);
 
@@ -116,10 +128,10 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      * @param id int number
      */
     public void remove(int id) {
-
-        this.loadData(this.loadType);
-
         try {
+            if (this.loadType.equals(LOADTYPE.LAZY)) {
+                loadData();
+            }
             provider.remove(id);
             data.remove(id);
 
@@ -136,9 +148,5 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
 
     public void deleteObserver(Observer o) {
         super.deleteObserver(o);
-    }
-
-    public static void main(String[] args){
-        return;
     }
 }
