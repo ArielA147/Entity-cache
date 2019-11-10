@@ -18,7 +18,7 @@ public class User<T extends IEntity> implements Observer {
             if(this.data.containsKey(entity.getId())) throw new KeyException("the entity is already exist");
             this.data.put(entity.getId(), entity);
 
-            myCache.add(entity); // now trying to add the entity to the cache
+            myCache.add(entity);
         } catch (KeyException e) {
             System.out.println(e.getMessage());
             System.out.println("could not add the new entity to the provider");

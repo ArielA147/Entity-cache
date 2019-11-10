@@ -22,8 +22,8 @@ public class TestMain {
         user2.add(cat3);
         user1.update(cat11);
 
-        // will throw exception ,removing entity from cache Of user 1 which not exist in the user1 cache
-        //user1.remove(cat3.getId());
+        /* will throw exception ,removing entity from cache Of user 1 which not exist in the user1 cache*/
+        user1.remove(cat3.getId());
 
         /* check removing an entity from user1 and the repository and the entity cache but not from user2 */
         user1.remove(cat1.getId()); // removing an entity from the cache

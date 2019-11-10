@@ -20,9 +20,7 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
     static enum LOADTYPE {
         LAZY,
         EAGER
-    }
-
-    ;
+    };
 
     private LOADTYPE loadType;
 

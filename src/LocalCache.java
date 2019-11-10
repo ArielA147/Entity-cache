@@ -1,5 +1,5 @@
 /**
- *
+ * an implementation of Entity Cache
  */
 public class LocalCache extends EntityCache {
     public LocalCache(IProvider provider) {
