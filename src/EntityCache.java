@@ -4,7 +4,6 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.security.KeyException;
-import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
@@ -125,18 +124,14 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      * @param id int number
      */
     public void remove(int id) {
-        try {
-            if (this.loadType.equals(LOADTYPE.LAZY)) {
-                loadData();
-            }
-            provider.remove(id);
-            data.remove(id);
-
-            notifyObservers(id);
-
-        } catch (NullPointerException e) {
-            System.out.println("could not remove the entity from the provider, hence the entity didn't removed from your entity cache");
+        if (this.loadType.equals(LOADTYPE.LAZY)) {
+            loadData();
         }
+        provider.remove(id);
+        data.remove(id);
+
+        notifyObservers(id);
+
     }
 
     public void addObserver(Observer o) {

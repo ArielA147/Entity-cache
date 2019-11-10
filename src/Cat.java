@@ -1,3 +1,6 @@
+/**
+ * Cat Entity for testing the code
+ */
 public class Cat implements IEntity {
 
     private int id;

@@ -4,7 +4,9 @@ public class Main {
         RepositoryProvider repo = new RepositoryProvider();
         EntityCache<Cat> cache = new LocalCache(repo);
         User user1 = new User(repo,cache);
+        User user2 = new User(repo,cache);
         cache.addObserver(user1);
+        cache.addObserver(user2);
 
         Cat cat1 = new Cat(123, "mizi");
         Cat cat2 = new Cat(123, "night");
@@ -13,17 +15,19 @@ public class Main {
 
 
         user1.add(cat1);
-        //user1.add(cat2); // will throw exception that the key is already exists
-        user1.add(cat3);
-
+        user2.add(cat3);
         user1.update(cat2);
-        //user1.update(cat4);
 
-        user1.remove(cat3.getId());
-        user1.remove(99);
+        user1.remove(cat3.getId()); // removing entity from cache
+        user1.add(cat3); // adding the deleted entity
 
-        user1.add(cat4);
-        user1.add(cat1);
+
+        // checking if wrong user action will throw an exception as excepted
+        user2.add(cat1); // will throw exception cause the entity already exist in the cache
+        user1.add(cat2); // adding entity with id that is already exist
+        user1.remove(99); // removing entity which is not exsists
+        user1.update(cat4); // update entity which not exsit will raise an exception
+
 
     }
 }

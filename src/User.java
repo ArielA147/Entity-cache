@@ -27,18 +27,18 @@ public class User<T extends IEntity> implements Observer {
         try {
             myCache.update(entity);
             this.data.replace(entity.getId(), entity);
+        } catch (NullPointerException e) {
+            System.out.println("the update function didn't succeed ");
+            System.out.println("could not update the new entity to the provider, hence the entity didn't get into your entity cache");
         }
-            catch (NullPointerException e) {
-                System.out.println("the update function didn't succeed ");
-                System.out.println("could not update the new entity to the provider, hence the entity didn't get into your entity cache");
-            }
     }
 
     public void remove(int id) {
         try {
             myCache.remove(id);
             this.data.remove(id);
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
+            System.out.println("could not remove the entity from the provider, hence the entity didn't removed from your entity cache");
             System.out.println("the removing function didn't succeed ");
         }
     }
