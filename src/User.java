@@ -1,3 +1,4 @@
+import java.security.KeyException;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,8 +17,9 @@ public class User<T extends IEntity> implements Observer {
         try {
             myCache.add(entity);
             this.data.put(entity.getId(), entity);
-        } catch (Exception e) {
-            System.out.println("the adding function didn't succeed ");
+        } catch (KeyException e) {
+            System.out.println(e.getMessage());
+            System.out.println("could not add the new entity to the provider, hence the entity didn't get into your local cache");
         }
     }
 
@@ -25,10 +27,11 @@ public class User<T extends IEntity> implements Observer {
         try {
             myCache.update(entity);
             this.data.replace(entity.getId(), entity);
-        } catch (Exception e) {
-            System.out.println("the update function didn't succeed ");
         }
-
+            catch (NullPointerException e) {
+                System.out.println("the update function didn't succeed ");
+                System.out.println("could not update the new entity to the provider, hence the entity didn't get into your entity cache");
+            }
     }
 
     public void remove(int id) {

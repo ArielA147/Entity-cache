@@ -3,6 +3,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.security.KeyException;
 import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.Observable;
@@ -52,7 +53,7 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
                 Type entityType = new TypeToken<T>() {
                 }.getType();
                 T entity = gson.create().fromJson(entry.getValue(), entityType);
-                System.out.println(entity.getId());
+                //System.out.println(entity.getId());
                 this.data.put(entry.getKey(), entity);
             }
         } catch (NullPointerException e) {
@@ -60,6 +61,10 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
         }
     }
 
+    /**
+     * @param id integer number that represents the entity object
+     * @return an entity which has the given id
+     */
     public T getEntity(int id) {
         try {
             if (this.loadType.equals(LOADTYPE.LAZY)) {
@@ -77,24 +82,20 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      *
      * @param entity new data that represents an entity
      */
-    public void add(T entity) {
-        try {
-            if (this.loadType.equals(LOADTYPE.LAZY)) {
-                loadData();
-            }
-            Gson gson = new Gson();
-            String jsonString = gson.toJson(entity);
+    public void add(T entity) throws KeyException {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(entity);
 
-            int id = entity.getId();
+        int id = entity.getId();
 
-            this.provider.add(id, jsonString);
-            this.data.put(id, entity);
+        this.provider.add(id, jsonString);
 
-            notifyObservers(entity);
-
-        } catch (NullPointerException e) {
-            System.out.println("could not add the new entity to the provider, hence the entity didn't get into your local cache");
+        if (this.loadType.equals(LOADTYPE.LAZY)) {
+            loadData();
         }
+        this.data.put(id, entity);
+
+        notifyObservers(entity);
     }
 
     /**
@@ -102,24 +103,20 @@ public abstract class EntityCache<T extends IEntity> extends Observable {
      *
      * @param entity new data that represents an entity
      */
-    public void update(T entity) {
-        loadData();
-        try {
-            if (this.loadType.equals(LOADTYPE.LAZY)) {
-                loadData();
-            }
-            Gson gson = new Gson();
-            String jsonString = gson.toJson(entity);
+    public void update(T entity) throws NullPointerException {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(entity);
 
-            int id = entity.getId();
+        int id = entity.getId();
 
-            this.provider.update(id, jsonString);
-            this.data.replace(id, entity);
-            notifyObservers(entity);
+        this.provider.update(id, jsonString);
 
-        } catch (NullPointerException e) {
-            System.out.println("could not update the new entity to the provider, hence the entity didn't get into your entity cache");
+        if (this.loadType.equals(LOADTYPE.LAZY)) {
+            loadData();
         }
+
+        this.data.replace(id, entity);
+        notifyObservers(entity);
     }
 
     /**

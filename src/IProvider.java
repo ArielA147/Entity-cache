@@ -1,3 +1,4 @@
+import java.security.KeyException;
 import java.util.Map;
 
 /**
@@ -16,7 +17,7 @@ public interface IProvider {
      * @param entity data of the object in json format
      * @throws NullPointerException thrown when the id number doesn't
      */
-    public void add(Integer id, String entity) throws NullPointerException;
+    public void add(Integer id, String entity) throws KeyException;
 
     /**
      * updates the entity by the id number .
